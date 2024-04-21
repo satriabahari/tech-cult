@@ -10,8 +10,8 @@ export default function Container({
   ...others
 }: ContainerProps) {
   return (
-    <div className={`mt-20 p-8 lg:mt-0 ${className} `} {...others}>
+    <section className={`p-4 ${className} `} {...others}>
       {children}
-    </div>
+    </section>
   );
 }
