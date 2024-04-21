@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { soraSans } from "@/common/styles/fonts";
 import Layouts from "@/common/components/layouts";
-
-const inter = Inter({ subsets: ["latin"] });
+import ThemeProviderContext from "@/common/stores/theme";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={soraSans.className}>
-        <Layouts>{children}</Layouts>
+        <ThemeProviderContext>
+          <Layouts>{children}</Layouts>
+        </ThemeProviderContext>
       </body>
     </html>
   );
