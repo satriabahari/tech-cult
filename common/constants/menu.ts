@@ -7,8 +7,23 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
   },
   {
-    title: "Region",
-    href: "/region",
+    title: "About",
+    href: "#about",
+    isShow: true,
+  },
+  {
+    title: "Info",
+    href: "#info",
+    isShow: true,
+  },
+  {
+    title: "Destinations",
+    href: "#destinations",
+    isShow: true,
+  },
+  {
+    title: "Contacts",
+    href: "#contacts",
     isShow: true,
   },
 ];

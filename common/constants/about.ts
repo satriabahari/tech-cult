@@ -1,1 +1,5 @@
-export const ABOUT = "blablabla";
+export const ABOUT = [
+  "Indonesia, negara kepulauan di Asia Tenggara, kaya akan budaya dan pemandangan alam yang menakjubkan. Dengan lebih dari 17.000 pulau, Indonesia memiliki ekosistem yang beragam, mulai dari hutan hujan hingga pantai dan gunung berapi. Keragaman etnis, bahasa, dan agama menjadikan Indonesia sebagai tempat bertemunya berbagai tradisi. Pengaruh sejarah perdagangan dan penjajahan menciptakan perpaduan unik antara kepercayaan asli dengan pengaruh Hindu, Buddha, Islam, dan Barat.",
+
+  "Destinasi populer di Indonesia termasuk Bali dengan teras-teras sawah dan festivalnya, serta Pulau Komodo yang terkenal dengan Komodo dragon. Bawah laut Indonesia juga menakjubkan dengan tempat menyelam terbaik di dunia seperti Raja Ampat dan Kepulauan Gili. Masakan Indonesia mencerminkan keanekaragaman geografisnya, dengan hidangan khas dari berbagai daerah seperti rendang dari Sumatra, sate dari Jawa, dan hidangan laut dari wilayah pesisir. Dari candi kuno seperti Borobudur hingga kota modern seperti Jakarta, Indonesia menawarkan pengalaman yang kaya bagi wisatawan yang mencari petualangan, budaya, dan keindahan alam.",
+];
