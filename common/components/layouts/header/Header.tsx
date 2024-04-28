@@ -10,48 +10,46 @@ import { MENU_ITEMS } from "@/common/constants/menu";
 import clsx from "clsx";
 import { AnimatePresence } from "framer-motion";
 import MobileMenu from "../../navbar/MobileMenu";
+import { useMenu } from "@/common/stores/menu";
 
 export default function Header() {
-  const [expandMenu, setExpandMenu] = useState(false);
+  const { isOpen, toggleMenu } = useMenu();
   const isMobile = UseIsMobile();
   const menus = MENU_ITEMS.filter((item) => item.isShow);
 
   useEffect(() => {
-    if (expandMenu) {
-      document.body.style.overflow = 'hidden';
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
 
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
-  }, [expandMenu]);
+  }, [isOpen]);
 
   return (
-    <header className="fixed z-20 w-full bg-light dark:bg-dark shadow-md">
-      <div className="flex items-center justify-between px-4 py-2">
-        <Profile expandMenu={expandMenu} />
+    <header className="fixed z-20 w-full bg-light shadow-md dark:bg-dark">
+      <div className="flex items-center justify-between lg:px-24 px-6 py-4">
+        <Profile expandMenu={isOpen} />
         <div className="hidden lg:flex">
           <Menu list={menus} />
         </div>
         <div
           className={clsx(
             "flex gap-6",
-            expandMenu && "flex-col-reverse items-end justify-between",
+            isOpen && "flex-col-reverse items-end justify-between",
           )}
         >
           <ThemeToggleButton />
           <div className="flex items-center lg:hidden">
-            <MobileMenuButton
-              expandMenu={expandMenu}
-              setExpandMenu={setExpandMenu}
-            />
+            <MobileMenuButton expandMenu={isOpen} setExpandMenu={toggleMenu} />
           </div>
         </div>
       </div>
       <div className="block lg:hidden">
-        <AnimatePresence>{expandMenu && <MobileMenu />}</AnimatePresence>
+        <AnimatePresence>{isOpen && <MobileMenu />}</AnimatePresence>
       </div>
     </header>
   );

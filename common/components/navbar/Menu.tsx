@@ -8,7 +8,7 @@ interface MenuProps {
 
 export default function Menu({ list }: MenuProps) {
   return (
-    <nav className="flex flex-col lg:flex-row lg:space-x-4 space-y-2 px-4">
+    <nav className="flex flex-col lg:flex-row lg:space-x-4 lg:space-y-0 space-y-2 px-4">
       {list.map((item: MenuItemProps, index: number) => (
         <MenuItem key={index} {...item} />
       ))}

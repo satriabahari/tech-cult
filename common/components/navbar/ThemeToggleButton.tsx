@@ -13,7 +13,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="rounded-xl bg-neutral-100 p-2 transition-all duration-300 hover:bg-neutral-200 dark:bg-neutral-800 hover:dark:bg-neutral-700"
+      className="rounded-xl bg-red-500 p-2 text-neutral-50 transition-all duration-300  hover:scale-105 hover:bg-red-600"
     >
       {resolvedTheme === "light" ? <BsCloudSun /> : <BsCloudMoon />}
     </button>

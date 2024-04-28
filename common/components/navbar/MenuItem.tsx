@@ -3,8 +3,8 @@
 import { useMenu } from "@/common/stores/menu";
 import { MenuItemProps } from "@/common/types/menu";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import { BsArrowRightShort as ExternalLinkIcon } from "react-icons/bs";
 
 export default function MenuItem({
   title,
@@ -14,14 +14,14 @@ export default function MenuItem({
   icon,
 }: MenuItemProps) {
   const [isHovered, setIsHovered] = useState(false);
-  const { hideMenu } = useMenu();
-  const pathname = usePathname();
+  const { isActive, setIsActive, hideMenu } = useMenu();
 
-  console.log(pathname)
+  const activeClasses = `flex gap-2 items-center py-2 px-4 text-neutral-600 hover:text-neutral-900 ${isActive === title && "bg-red-600 !text-neutral-50 rounded-lg lg:rounded-full"}`;
 
-  const activeClasses = `flex gap-2 items-center py-2 px-4 text-neutral-700 ${pathname === href ? "bg-neutral-700 " : ""}`;
   const handleClick = () => {
     hideMenu();
+    setIsActive(title);
+    if (onClick) onClick();
   };
 
   const handleMouseEnter = () => {
@@ -39,11 +39,21 @@ export default function MenuItem({
     onMouseLeave: handleMouseLeave,
   };
   const ItemComponent = () => {
-    return <div {...elementProps}>{title}</div>;
+    return (
+      <div {...elementProps}>
+        <div className="ml-0.5 flex-grow">{title}</div>
+        {isActive === title && (
+          <ExternalLinkIcon size={22} className="animate-pulse text-neutral-50 lg:hidden block" />
+        )}
+      </div>
+    );
   };
+
   return (
     <div>
-      <Link href={href}>{title}</Link>
+      <Link href={href}>
+        <ItemComponent />
+      </Link>
     </div>
   );
 }
