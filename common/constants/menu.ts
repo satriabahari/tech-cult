@@ -2,13 +2,13 @@ import { MenuItemProps } from "../types/menu";
 
 export const MENU_ITEMS: MenuItemProps[] = [
   {
-    title: "Home",
+    title: "Beranda",
     href: "/",
     isShow: true,
   },
   {
-    title: "About",
-    href: "#about",
+    title: "Tentang",
+    href: "#tentang",
     isShow: true,
   },
   {
@@ -17,13 +17,18 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
   },
   {
-    title: "Destinations",
-    href: "#destinations",
+    title: "Destinasi",
+    href: "#destinasi",
     isShow: true,
   },
   {
-    title: "Contacts",
-    href: "#contacts",
+    title: "Lomba",
+    href: "#lomba",
+    isShow: true,
+  },
+  {
+    title: "Kontak",
+    href: "#kontak",
     isShow: true,
   },
 ];
