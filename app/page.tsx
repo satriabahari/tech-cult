@@ -1,8 +1,9 @@
 import About from "@/modules/about";
+import Contacts from "@/modules/contacts";
 import Destinations from "@/modules/destinations";
+import Events from "@/modules/events/components/Events";
 import Home from "@/modules/home";
-import Info from "@/modules/info";
-import Lombas from "@/modules/lombas";
+import Info from "@/modules/infos";
 
 export default function HomePage() {
   return (
@@ -11,7 +12,8 @@ export default function HomePage() {
       <About />
       <Info />
       <Destinations />
-      <Lombas />
+      <Events />
+      <Contacts />
     </>
   );
 }
