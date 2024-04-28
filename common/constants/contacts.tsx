@@ -10,7 +10,7 @@ import { ContactProps } from "../types/contact";
 
 const iconSize = 20;
 
-export const SOCIAL_MEDIA: ContactProps[] = [
+export const CONTACTS: ContactProps[] = [
   {
     title: "Gmail",
     href: "mailto:satriaabaharii@gmail.com",
