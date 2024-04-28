@@ -10,7 +10,7 @@ export default function Container({
   ...others
 }: ContainerProps) {
   return (
-    <section className={`p-4 ${className} `} {...others}>
+    <section className={`py-4 px-6 lg:px-24 scroll-mt-24 lg:scroll-mt-28 ${className} `} {...others}>
       {children}
     </section>
   );
