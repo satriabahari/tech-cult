@@ -6,7 +6,7 @@ export default function DestinationList() {
     (destination) => destination.isShow,
   );
   return (
-    <section className="space-y-8">
+    <section className="grid grid-cols-2 lg:grid-cols-4 gap-4">
       {filteredDestinations.map((destination, index) => (
         <DestinationCard key={index} {...destination} />
       ))}
