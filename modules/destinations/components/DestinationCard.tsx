@@ -31,7 +31,7 @@ export default function DestinationCard({
   );
 
   return (
-    <Card className="flex flex-col overflow-hidden border transition duration-300 hover:scale-105">
+    <Card className="flex flex-col overflow-hidden border-2 border-neutral-300 dark:border-neutral-600 transition duration-300 hover:scale-105 bg-gradient-to-b from-neutral-200 to-neutral-50 dark:from-neutral-700 dark:to-neutral-900">
       <Image
         src={image}
         alt={title}
