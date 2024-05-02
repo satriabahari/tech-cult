@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Profile from "../../navbar/Profile";
 import ThemeToggleButton from "../../navbar/ThemeToggleButton";
 import MobileMenuButton from "../../navbar/MobileMenuButton";
-import UseIsMobile from "@/common/hooks/UseIsMobile";
+import UseIsMobile from "@/common/hooks/useIsMobile";
 import Menu from "../../navbar/Menu";
 import { MENU_ITEMS } from "@/common/constants/menu";
 import clsx from "clsx";

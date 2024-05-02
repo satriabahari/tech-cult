@@ -11,7 +11,7 @@ export default function Box({ title, description, icon }: BoxProps) {
         {icon}
       </div>
       <h3 className="font-medium text-red-500">{title}</h3>
-      <p className="text-sm text-neutral-900">{description}</p>
+      <p className="text-sm text-neutral-900 dark:text-neutral-400">{description}</p>
     </div>
   );
 }

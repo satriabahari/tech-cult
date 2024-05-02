@@ -5,8 +5,8 @@ interface PageHeadingProps {
 
 export default function PageHeading({ title, description }: PageHeadingProps) {
   return (
-    <div className="mb-8 space-y-1 text-center">
-      <h2 className="text-neutral-900 text-3xl font-medium">{title}</h2>
+    <div className="mb-12 space-y-1 text-center">
+      <h2 className="text-neutral-900 dark:text-neutral-50 text-4xl font-medium">{title}</h2>
       <p className="text-sm text-neutral-900">{description}</p>
     </div>
   );

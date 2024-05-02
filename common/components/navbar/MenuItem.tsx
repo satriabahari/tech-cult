@@ -16,7 +16,7 @@ export default function MenuItem({
   const [isHovered, setIsHovered] = useState(false);
   const { isActive, setIsActive, hideMenu } = useMenu();
 
-  const activeClasses = `flex gap-2 items-center py-2 px-4 text-neutral-600 hover:text-neutral-900 ${isActive === title && "bg-red-600 !text-neutral-50 rounded-lg lg:rounded-full"}`;
+  const activeClasses = `flex gap-2 items-center py-2 px-4 text-neutral-600 hover:text-neutral-900 ${isActive.charAt(0).toUpperCase() + isActive.slice(1) === title && "bg-red-600 !text-neutral-50 dark:!text-neutral-200 rounded-lg lg:rounded-full"}`;
 
   const handleClick = () => {
     hideMenu();
@@ -41,9 +41,12 @@ export default function MenuItem({
   const ItemComponent = () => {
     return (
       <div {...elementProps}>
-        <div className="ml-0.5 flex-grow">{title}</div>
+        <div className="ml-0.5 flex-grow textneutral-800 dark:text-neutral-50 ">{title}</div>
         {isActive === title && (
-          <ExternalLinkIcon size={22} className="animate-pulse text-neutral-50 lg:hidden block" />
+          <ExternalLinkIcon
+            size={22}
+            className="block animate-pulse text-neutral-50 lg:hidden"
+          />
         )}
       </div>
     );
