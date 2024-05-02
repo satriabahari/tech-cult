@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function EventCard({ title, image }: DestinationProps) {
   return (
-    <Card className="hover:scale-105 duration-300 transition">
+    <Card className="hover:scale-105 duration-300 transition border-2 border-neutral-300 dark:border-neutral-600">
       <div className="relative">
         <Image
           src={image}
