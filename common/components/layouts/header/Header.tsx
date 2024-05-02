@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import Profile from "../../navbar/Profile";
 import ThemeToggleButton from "../../navbar/ThemeToggleButton";
 import MobileMenuButton from "../../navbar/MobileMenuButton";
-import UseIsMobile from "@/common/hooks/useIsMobile";
 import Menu from "../../navbar/Menu";
 import { MENU_ITEMS } from "@/common/constants/menu";
 import clsx from "clsx";
@@ -14,7 +13,6 @@ import { useMenu } from "@/common/stores/menu";
 
 export default function Header() {
   const { isOpen, toggleMenu } = useMenu();
-  const isMobile = UseIsMobile();
   const menus = MENU_ITEMS.filter((item) => item.isShow);
 
   useEffect(() => {
@@ -31,7 +29,7 @@ export default function Header() {
 
   return (
     <header className="fixed z-20 w-full bg-light shadow-md dark:bg-dark">
-      <div className="flex items-center justify-between lg:px-24 px-6 py-4">
+      <div className="flex items-center justify-between px-6 py-4 lg:px-24">
         <Profile expandMenu={isOpen} />
         <div className="hidden lg:flex">
           <Menu list={menus} />
