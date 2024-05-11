@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emotion/styled": "^11.11.5",
+    "@headlessui/react": "^2.0.3",
     "aos": "^2.3.4",
     "axios": "^1.6.8",
     "clsx": "^2.1.0",
