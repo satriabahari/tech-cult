@@ -16,7 +16,7 @@ interface InputFieldProps<TFormValue extends FieldValues> {
   rows?: number;
 }
 
-export default function InputField<TFormValue extends FieldValues>({
+const InputField = <TFormValue extends FieldValues>({
   name,
   rule,
   error,
@@ -24,7 +24,7 @@ export default function InputField<TFormValue extends FieldValues>({
   placeholder = "",
   rows = 2,
   register,
-}: InputFieldProps<TFormValue>) {
+}: InputFieldProps<TFormValue>) => {
   const renderPlaceholder =
     placeholder || name.charAt(0).toUpperCase() + name.slice(1);
   return (
@@ -56,4 +56,6 @@ export default function InputField<TFormValue extends FieldValues>({
       )}
     </div>
   );
-}
+};
+
+export default InputField;

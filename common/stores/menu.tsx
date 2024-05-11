@@ -6,7 +6,7 @@ export type InitialModalState = {
 };
 
 export type InitialModalAction = {
-  setIsActive: (title: string) => void;
+  setIsActive: (title: string) => void; 
   showMenu(): void;
   hideMenu(): void;
   toggleMenu(): void;

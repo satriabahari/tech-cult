@@ -3,7 +3,7 @@ interface PageHeadingProps {
   description?: string;
 }
 
-export default function PageHeading({ title, description }: PageHeadingProps) {
+const PageHeading = ({ title, description }: PageHeadingProps) => {
   return (
     <div className="mb-12 space-y-1 text-center">
       <h2 className="text-neutral-900 dark:text-neutral-50 text-4xl font-medium">{title}</h2>
@@ -11,3 +11,5 @@ export default function PageHeading({ title, description }: PageHeadingProps) {
     </div>
   );
 }
+
+export default PageHeading;

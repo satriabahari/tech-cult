@@ -1,18 +1,13 @@
 "use client";
 
-import { useMenu } from "@/common/stores/menu";
-import { MenuItemProps } from "@/common/types/menu";
 import Link from "next/link";
 import { useState } from "react";
 import { BsArrowRightShort as ExternalLinkIcon } from "react-icons/bs";
 
-export default function MenuItem({
-  title,
-  href,
-  className,
-  onClick,
-  icon,
-}: MenuItemProps) {
+import { useMenu } from "@/common/stores/menu";
+import { MenuItemProps } from "@/common/types/menu";
+
+const MenuItem = ({ title, href, className, onClick, icon }: MenuItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const { isActive, setIsActive, hideMenu } = useMenu();
 
@@ -41,7 +36,9 @@ export default function MenuItem({
   const ItemComponent = () => {
     return (
       <div {...elementProps}>
-        <div className="ml-0.5 flex-grow textneutral-800 dark:text-neutral-50 ">{title}</div>
+        <div className="textneutral-800 ml-0.5 flex-grow dark:text-neutral-50 ">
+          {title}
+        </div>
         {isActive === title && (
           <ExternalLinkIcon
             size={22}
@@ -59,4 +56,6 @@ export default function MenuItem({
       </Link>
     </div>
   );
-}
+};
+
+export default MenuItem;

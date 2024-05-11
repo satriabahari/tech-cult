@@ -1,7 +1,7 @@
-import Container from '@/common/components/elements/Container'
-import PageHeading from '@/common/components/elements/Heading'
-import React from 'react'
-import HeroFigureList from './HeroFigureList'
+import HeroFigureList from "./HeroFigureList";
+
+import Container from "@/common/components/elements/Container";
+import PageHeading from "@/common/components/elements/Heading";
 
 const HeroFigure = () => {
   return (
@@ -9,7 +9,7 @@ const HeroFigure = () => {
       <PageHeading title="Tokoh Pahlawan" />
       <HeroFigureList />
     </Container>
-  )
-}
+  );
+};
 
-export default HeroFigure
+export default HeroFigure;

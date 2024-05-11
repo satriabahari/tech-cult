@@ -1,45 +1,61 @@
-import Card from "@/common/components/elements/Card";
-import { HeroFigureProps } from "@/common/types/heroFigure";
+"use client";
+
 import Image from "next/image";
 
+import HeroFigureDetail from "./HeroFigureDetail";
+
+import Card from "@/common/components/elements/Card";
+import { useDetailPopUpHeroFigure } from "@/common/stores/details";
+import { HeroFigureProps } from "@/common/types/heroFigure";
+
 const HeroFigureCard = ({
+  id,
   name,
   date_of_birth,
   place_of_birth,
   date_of_death,
   place_of_death,
   description,
+  image,
 }: HeroFigureProps) => {
+  const { isOpen, setIsOpen, setId, currentId } = useDetailPopUpHeroFigure();
+
+  const handleClick = (id: number) => {
+    setId(id);
+    setIsOpen(true);
+  };
   return (
-    <Card className="group relative rounded-lg bg-neutral-100 text-center shadow-lg dark:bg-neutral-800 border-2 border-neutral-300 dark:border-neutral-600 ">
-      <div className="left-0 top-0 h-28 w-full rounded-t-lg bg-red-500" />
-      <Image
-        src={"/images/heroFigure/soekarno.webp"}
-        alt={name}
-        width={150}
-        height={150}
-        className="absolute left-0 top-8 rounded-full shadow-2xl transition duration-300 group-hover:scale-105"
-      />
-      <div className="flex h-auto flex-col justify-between space-y-4 p-4 ">
-        <div className="mt-20 space-y-2">
-          <h2 className="text-xl font-medium transition duration-300 group-hover:text-red-500">
-            {name}
-          </h2>
-          <p className="text-sm text-neutral-700 dark:text-neutral-400">
-            {description}
-          </p>
-        </div>
-        <div className="rounded-lg border border-red-500 bg-neutral-50 p-2 text-xs text-neutral-900 dark:bg-neutral-600 dark:text-neutral-200">
-          <p className="mb-2 font-bold">Tempat, tanggal lahir</p>
-          <p className="mb-1">{place_of_birth}</p>
-          <p>{date_of_birth}</p>
-        </div>
-        <div className="rounded-lg border border-red-500 bg-neutral-50 p-2 text-xs text-neutral-900 dark:bg-neutral-600 dark:text-neutral-200">
-          <p className="mb-2 font-bold">Tempat, tanggal wafat</p>
-          <p className="mb-1">{place_of_death}</p>
-          <p>{date_of_death}</p>
-        </div>
+    <Card
+      className="cursor-pointer rounded-lg border-2 border-neutral-300 bg-neutral-100 text-center shadow-lg dark:border-neutral-600 dark:bg-neutral-800"
+      onClick={() => handleClick(id)}
+    >
+      <div className="relative h-28 w-full rounded-t-lg bg-red-500">
+        <Image
+          src={image}
+          alt={name}
+          width={150}
+          height={150}
+          className="absolute -bottom-1/2 right-1/2 h-36 w-36 translate-x-1/2 overflow-hidden rounded-full object-cover shadow-2xl transition duration-300"
+        />
       </div>
+      <h2 className="mb-4 mt-20 text-xl font-medium transition duration-300">
+        {name}
+      </h2>
+
+      {currentId === id && (
+        <HeroFigureDetail
+          id={id}
+          name={name}
+          description={description}
+          date_of_birth={date_of_birth}
+          place_of_birth={place_of_birth}
+          date_of_death={date_of_death}
+          place_of_death={place_of_death}
+          image={image}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
+      )}
     </Card>
   );
 };

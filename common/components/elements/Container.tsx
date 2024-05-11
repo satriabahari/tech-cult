@@ -1,8 +1,9 @@
 "use client";
 
+import { useEffect } from "react";
+
 import useIsIntersectionObserver from "@/common/hooks/useIsIntersectionObserver";
 import { useMenu } from "@/common/stores/menu";
-import { useEffect } from "react";
 
 type ContainerProps = {
   children: React.ReactNode;
@@ -10,11 +11,7 @@ type ContainerProps = {
   [propName: string]: React.ReactNode | string | undefined;
 };
 
-export default function Container({
-  children,
-  className = "",
-  ...others
-}: ContainerProps) {
+const Container = ({ children, className = "", ...others }: ContainerProps) => {
   const { isIntersecting, ref } = useIsIntersectionObserver();
   const { setIsActive, isActive } = useMenu();
   const idValue = others?.["id"];
@@ -34,4 +31,6 @@ export default function Container({
       {children}
     </section>
   );
-}
+};
+
+export default Container;

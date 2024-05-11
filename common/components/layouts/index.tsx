@@ -1,22 +1,23 @@
 "use client";
 
 import { useEffect } from "react";
-import Header from "./header/Header";
-import Footer from "./partials/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+import Header from "./header/Header";
+import Footer from "./partials/Footer";
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
-export default function Layouts({ children }: LayoutProps) {
+const Layouts = ({ children }: LayoutProps) => {
   useEffect(() => {
     AOS.init({
       duration: 800,
       delay: 50,
       once: true,
-      offset: 200
+      offset: 200,
     });
   });
   return (
@@ -27,3 +28,5 @@ export default function Layouts({ children }: LayoutProps) {
     </div>
   );
 }
+
+export default Layouts;

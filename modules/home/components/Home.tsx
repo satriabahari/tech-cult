@@ -1,8 +1,8 @@
-import Container from "@/common/components/elements/Container";
-import useIsIntersectionObserver from "@/common/hooks/useIsIntersectionObserver";
 import Image from "next/image";
 
-export default function Home() {
+import Container from "@/common/components/elements/Container";
+
+const Home = () => {
   return (
     <Container
       id="beranda"
@@ -13,13 +13,13 @@ export default function Home() {
         src={"/images/backgrounds/indonesia.png"}
         alt="Indonesia"
         fill={true}
-        className="lg:object-fit object-none py-32 px-4 opacity-15"
+        className="lg:object-fit object-none px-4 py-32 opacity-15"
       />
-      <div className="absolute text-center lg:space-y-3 space-y-1">
-        <h1 className="lg:text-5xl text-3xl font-medium uppercase text-neutral-900 dark:text-neutral-50">
+      <div className="absolute space-y-1 text-center lg:space-y-3">
+        <h1 className="text-3xl font-medium uppercase text-neutral-900 dark:text-neutral-50 lg:text-5xl">
           Budaya Nusantara
         </h1>
-        <h1 className="lg:text-4xl text-2xl font-semibold uppercase text-red-500">
+        <h1 className="text-2xl font-semibold uppercase text-red-500 lg:text-4xl">
           Indonesia
         </h1>
         <p className="text-neutral-900 dark:text-neutral-50 lg:text-2xl">
@@ -29,4 +29,6 @@ export default function Home() {
       </div>
     </Container>
   );
-}
+};
+
+export default Home;

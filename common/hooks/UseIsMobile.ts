@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useWindowSize } from "usehooks-ts";
 
-export default function UseIsMobile() {
+const UseIsMobile = () => {
   const { width } = useWindowSize();
   const [isMobile, setIsMobile] = useState(width < 769);
 
@@ -10,4 +10,6 @@ export default function UseIsMobile() {
   }, [width]);
 
   return isMobile;
-}
+};
+
+export default UseIsMobile;

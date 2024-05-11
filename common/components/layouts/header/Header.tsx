@@ -1,17 +1,19 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
+import clsx from "clsx";
+import { AnimatePresence } from "framer-motion";
+
 import Profile from "../../navbar/Profile";
 import ThemeToggleButton from "../../navbar/ThemeToggleButton";
 import MobileMenuButton from "../../navbar/MobileMenuButton";
 import Menu from "../../navbar/Menu";
-import { MENU_ITEMS } from "@/common/constants/menu";
-import clsx from "clsx";
-import { AnimatePresence } from "framer-motion";
 import MobileMenu from "../../navbar/MobileMenu";
+
+import { MENU_ITEMS } from "@/common/constants/menu";
 import { useMenu } from "@/common/stores/menu";
 
-export default function Header() {
+const Header = () => {
   const { isOpen, toggleMenu } = useMenu();
   const menus = MENU_ITEMS.filter((item) => item.isShow);
 
@@ -51,4 +53,6 @@ export default function Header() {
       </div>
     </header>
   );
-}
+};
+
+export default Header;

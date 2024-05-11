@@ -1,7 +1,7 @@
-type BreaklineProps = {
+interface BreaklineProps {
   className?: string;
   [propName: string]: string | undefined;
-};
+}
 
 const Breakline = ({ className = "", ...others }: BreaklineProps) => {
   return (

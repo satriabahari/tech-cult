@@ -4,7 +4,7 @@ interface BoxProps {
   icon: JSX.Element;
 }
 
-export default function Box({ title, description, icon }: BoxProps) {
+const Box = ({ title, description, icon }: BoxProps) => {
   return (
     <div className="flex flex-col items-center justify-center text-center gap-y-2">
       <div className="w-fit rounded-xl bg-red-500 p-2 text-neutral-50">
@@ -15,3 +15,5 @@ export default function Box({ title, description, icon }: BoxProps) {
     </div>
   );
 }
+
+export default Box;

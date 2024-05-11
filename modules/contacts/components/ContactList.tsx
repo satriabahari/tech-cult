@@ -1,13 +1,16 @@
-import { CONTACTS } from "@/common/constants/contacts";
 import ContactCard from "./ContactCard";
 
-export default function ContactList() {
+import { CONTACTS } from "@/common/constants/contacts";
+
+const ContactList = () => {
   const filteredSocialMedia = CONTACTS?.filter((social) => social?.isShow);
   return (
-    <div className="gap-4 flex flex-col">
+    <div className="flex flex-col gap-4">
       {filteredSocialMedia.map((media) => (
         <ContactCard key={media.title} {...media} />
       ))}
     </div>
   );
-}
+};
+
+export default ContactList;

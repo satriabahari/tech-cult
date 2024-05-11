@@ -12,7 +12,7 @@ interface FormEmail {
   message: string;
 };
 
-export default function ContactForm() {
+const ContactForm = () => {
   const {
     register,
     handleSubmit,
@@ -89,3 +89,5 @@ export default function ContactForm() {
     </div>
   );
 }
+
+export default ContactForm;

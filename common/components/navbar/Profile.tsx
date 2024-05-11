@@ -1,22 +1,21 @@
 import Link from "next/link";
-import React from "react";
-import { SiIndigo as IndonesiaIcon } from "react-icons/si";
-import { MdVerified as VerifiedIcon } from "react-icons/md";
-import Tooltip from "../elements/Tooltip";
 import clsx from "clsx";
 import Image from "next/image";
+import { MdVerified as VerifiedIcon } from "react-icons/md";
+
+import Tooltip from "../elements/Tooltip";
 
 interface ProfileHeaderProps {
   expandMenu: boolean;
 }
 
-export default function Profile({ expandMenu }: ProfileHeaderProps) {
+const Profile = ({ expandMenu }: ProfileHeaderProps) => {
   return (
     <div className={clsx("flex flex-row gap-2", expandMenu && "flex-col")}>
       <Image
         src={"/images/logo/flag.png"}
-        width={expandMenu ? 60: 40}
-        height={expandMenu ? 60: 40}
+        width={expandMenu ? 60 : 40}
+        height={expandMenu ? 60 : 40}
         alt="logo Indonesia"
         className="transition-all duration-300"
       />
@@ -30,4 +29,6 @@ export default function Profile({ expandMenu }: ProfileHeaderProps) {
       </div>
     </div>
   );
-}
+};
+
+export default Profile;

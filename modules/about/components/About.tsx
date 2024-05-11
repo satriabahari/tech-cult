@@ -1,13 +1,19 @@
-import Container from "@/common/components/elements/Container";
-import PageHeading from "@/common/components/elements/Heading";
-import React from "react";
 import Introduction from "./Introduction";
 
-export default function About() {
+import Container from "@/common/components/elements/Container";
+import PageHeading from "@/common/components/elements/Heading";
+
+const About = () => {
   return (
-    <Container id="tentang" data-aos="fade-up" className="min-h-screen h-full mb-12">
+    <Container
+      id="tentang"
+      data-aos="fade-up"
+      className="mb-12 h-full min-h-screen"
+    >
       <PageHeading title="Tentang" />
       <Introduction />
     </Container>
   );
-}
+};
+
+export default About;

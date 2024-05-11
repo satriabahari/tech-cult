@@ -1,8 +1,9 @@
-import Container from "@/common/components/elements/Container";
 import InfoList from "./InfoList";
+
+import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/Heading";
 
-export default function Info() {
+const Info = () => {
   return (
     <Container id="info" data-aos="fade-up" className="mb-16">
       <PageHeading title="Info"/>
@@ -10,3 +11,5 @@ export default function Info() {
     </Container>
   )
 }
+
+export default Info;

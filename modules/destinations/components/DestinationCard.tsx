@@ -1,7 +1,15 @@
-import Card from "@/common/components/elements/Card";
-import { DestinationProps } from "@/common/types/destination";
+"use client";
+
 import Image from "next/image";
-import { Si1Password, Si4Chan, SiAcm } from "react-icons/si";
+import { FaMapMarkerAlt as LocationIcon } from "react-icons/fa";
+import { GiJourney as JourneyIcon } from "react-icons/gi";
+import { SiCodementor as ByIcon } from "react-icons/si";
+
+import DestinationDetail from "./DestinationDetail";
+
+import Card from "@/common/components/elements/Card";
+import { useDetailPopUpDestinations } from "@/common/stores/details";
+import { DestinationProps } from "@/common/types/destination";
 
 interface ItemComponentProps {
   title?: string;
@@ -10,16 +18,15 @@ interface ItemComponentProps {
 }
 
 export default function DestinationCard({
+  id,
   title,
   description,
   image,
   by,
   location,
   length_journey,
-  icon,
 }: DestinationProps) {
-  const trimmedDescription =
-    description.slice(0, 70) + (description.length > 90 ? "..." : "");
+  const { isOpen, setIsOpen, setId, currentId } = useDetailPopUpDestinations();
 
   const iconSize = 13;
 
@@ -30,8 +37,13 @@ export default function DestinationCard({
     </div>
   );
 
+  const handleClick = (id: number) => {
+    setId(id);
+    setIsOpen(true);
+  };
+
   return (
-    <Card className="flex flex-col overflow-hidden border-2 border-neutral-300 dark:border-neutral-600 transition duration-300 hover:scale-105 bg-gradient-to-b from-neutral-200 to-neutral-50 dark:from-neutral-700 dark:to-neutral-900">
+    <Card className="flex flex-col justify-between overflow-hidden border-2 border-neutral-300 bg-gradient-to-b from-neutral-200 to-neutral-50 transition duration-300 hover:scale-105 dark:border-neutral-600 dark:from-neutral-700 dark:to-neutral-900">
       <Image
         src={image}
         alt={title}
@@ -43,19 +55,38 @@ export default function DestinationCard({
         <h3 className="font-medium">{title}</h3>
         <ItemComponent
           title={`By ${by}`}
-          icon={<Si1Password size={iconSize} />}
+          icon={<ByIcon size={iconSize} />}
           className="text-red-500"
         />
-        <ItemComponent title={location} icon={<Si4Chan size={iconSize} />} />
+        <ItemComponent
+          title={location}
+          icon={<LocationIcon size={iconSize} />}
+        />
         <ItemComponent
           title={`${length_journey} perjalanan`}
-          icon={<SiAcm size={iconSize} />}
+          icon={<JourneyIcon size={iconSize} />}
         />
 
-        {/* <p className="text-sm">{trimmedDescription}</p> */}
-        {/* <button className="rounded-full bg-red-500 px-4 py-1 text-neutral-50">
+        <button
+          className="w-full rounded-full bg-red-500 px-4 py-1 text-sm text-neutral-50 hover:bg-red-600"
+          onClick={() => handleClick(id)}
+        >
           Detail
-        </button> */}
+        </button>
+
+        {currentId === id && (
+          <DestinationDetail
+            id={id}
+            title={title}
+            description={description}
+            image={image}
+            by={by}
+            location={location}
+            length_journey={length_journey}
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+          />
+        )}
       </div>
     </Card>
   );

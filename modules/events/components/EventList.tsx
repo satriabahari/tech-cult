@@ -1,8 +1,8 @@
-import { EVENTS } from "@/common/constants/events";
-import React from "react";
 import EventCard from "./EventCard";
 
-export default function EventList() {
+import { EVENTS } from "@/common/constants/events";
+
+const EventList = () => {
   const filteredEvent = EVENTS.filter((event) => event.isShow);
   return (
     <div className="grid grid-cols-1 gap-x-4 gap-y-4 lg:grid-cols-3">
@@ -11,4 +11,6 @@ export default function EventList() {
       ))}
     </div>
   );
-}
+};
+
+export default EventList;
