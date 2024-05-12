@@ -1,7 +1,7 @@
 "use client";
 
+import { ReactNode } from "react";
 import { ThemeProvider } from "next-themes";
-import React, { ReactNode } from "react";
 
 export const ThemeProviderContext = ({ children }: { children: ReactNode }) => {
   return (
