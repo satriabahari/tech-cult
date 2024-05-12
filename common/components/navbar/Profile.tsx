@@ -21,7 +21,7 @@ const Profile = ({ expandMenu }: ProfileHeaderProps) => {
       />
       <div className="flex items-center gap-2">
         <Link href="/">
-          <h2>Indonesia</h2>
+          <h2>TechCult</h2>
         </Link>
         <Tooltip title="Verified">
           <VerifiedIcon size={18} className="text-blue-400" />

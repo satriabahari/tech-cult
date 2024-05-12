@@ -16,15 +16,14 @@ const Home = () => {
         className="lg:object-fit object-none px-4 py-32 opacity-15"
       />
       <div className="absolute space-y-1 text-center lg:space-y-3">
-        <h1 className="text-3xl font-medium uppercase text-neutral-900 dark:text-neutral-50 lg:text-5xl">
-          Budaya Nusantara
+        <h1 className="text-3xl font-medium uppercase text-neutral-900 dark:text-neutral-50 lg:text-6xl">
+          Tech Culture
         </h1>
-        <h1 className="text-2xl font-semibold uppercase text-red-500 lg:text-4xl">
+        <h1 className="text-2xl font-semibold uppercase text-red-500 lg:text-5xl">
           Indonesia
         </h1>
         <p className="text-neutral-900 dark:text-neutral-50 lg:text-2xl">
-          <span className="font-semibold">Pulih</span> lebih cepat,{" "}
-          <span className="font-semibold">Bangkit</span> lebih kuat.
+          Memelihara, Menyuarakan, dan Menjelajahi Kebudayaan Indonesia.
         </p>
       </div>
     </Container>
