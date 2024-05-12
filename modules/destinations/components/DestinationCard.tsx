@@ -25,6 +25,7 @@ export default function DestinationCard({
   by,
   location,
   length_journey,
+  popular_activity
 }: DestinationProps) {
   const { isOpen, setIsOpen, setId, currentId } = useDetailPopUpDestinations();
 
@@ -83,6 +84,7 @@ export default function DestinationCard({
             by={by}
             location={location}
             length_journey={length_journey}
+            popular_activity={popular_activity}
             isOpen={isOpen}
             setIsOpen={setIsOpen}
           />

@@ -27,6 +27,11 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
   },
   {
+    title: "Makanan",
+    href: "#makanan",
+    isShow: true,
+  },
+  {
     title: "Lomba",
     href: "#lomba",
     isShow: true,

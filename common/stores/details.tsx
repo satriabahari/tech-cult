@@ -27,3 +27,10 @@ export const useDetailPopUpHeroFigure = create<detailPopUpProps>()((set) => ({
   isOpen: false,
   setIsOpen: () => set((state) => ({ isOpen: !state.isOpen })),
 }));
+
+export const useDetailPopUpFood = create<detailPopUpProps>()((set) => ({
+  currentId: 0,
+  setId: (id) => set(() => ({ currentId: id })),
+  isOpen: false,
+  setIsOpen: () => set((state) => ({ isOpen: !state.isOpen })),
+}));

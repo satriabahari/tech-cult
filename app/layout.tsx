@@ -3,7 +3,7 @@ import "./globals.css";
 
 import { soraSans } from "@/common/styles/fonts";
 import Layouts from "@/common/components/layouts";
-import { ThemeProviderContext } from "@/common/stores/theme";
+import ThemeProviderContext from "@/common/stores/theme";
 
 export const metadata: Metadata = {
   title: "Indonesia | Satria Bahari",

@@ -5,7 +5,8 @@ export interface DestinationProps {
   image: string;
   by: string;
   location: string;
-  icon?: JSX.Element
+  icon?: JSX.Element;
   length_journey: string;
   isShow?: boolean;
+  popular_activity: string[];
 }

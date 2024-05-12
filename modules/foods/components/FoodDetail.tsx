@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { IoClose as CloseIcon } from "react-icons/io5";
+import Image from "next/image";
 
 import {
   Description,
@@ -8,23 +8,29 @@ import {
   DialogTitle,
 } from "@headlessui/react";
 
-
-interface EventDetailProps {
+interface FoodDetailProps {
   id: number;
-  title: string;
+  name: string;
   description: string;
+  origin: string;
   image: string;
+  ingredients: string[];
+  instructions: string;
   isOpen: boolean;
   setIsOpen: (state: boolean) => void;
 }
 
-const EventDetail = ({
+const FoodDetail = ({
+  id,
+  name,
   description,
-  title,
+  origin,
   image,
+  ingredients,
+  instructions,
   isOpen,
   setIsOpen,
-}: EventDetailProps) => {
+}: FoodDetailProps) => {
   return (
     <>
       <Dialog
@@ -44,12 +50,30 @@ const EventDetail = ({
             </button>
             <div className="max-h-[32rem] space-y-4 overflow-y-auto">
               <DialogTitle className="text-2xl font-semibold text-neutral-900 dark:text-neutral-50">
-                {title}
+                {name}
               </DialogTitle>
               <Description className="text-neutral-700 dark:text-neutral-400">
                 {description}
               </Description>
-              <Image src={image} alt={title} width={600} height={600} />
+              <div>
+                <h3 className="font-medium text-lg">Asal: </h3>
+                <p className="text-neutral-700 dark:text-neutral-400">{origin}</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-medium">Bahan-Bahan:</h3>
+                <ul>
+                  {ingredients.map((ingredient, index) => (
+                    <li key={index} className="text-neutral-700 dark:text-neutral-400">
+                      {ingredient}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-lg font-medium">Intruksi Memasak:</h3>
+                <p className="text-neutral-700 dark:text-neutral-400">{instructions}</p>
+              </div>
+              <Image src={image} alt={name} width={600} height={600} />
             </div>
           </DialogPanel>
         </div>
@@ -58,4 +82,4 @@ const EventDetail = ({
   );
 };
 
-export default EventDetail;
+export default FoodDetail;

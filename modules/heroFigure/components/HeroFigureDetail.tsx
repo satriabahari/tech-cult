@@ -38,10 +38,10 @@ const HeroFigureDetail = ({
         onClose={() => setIsOpen(false)}
         className="relative z-50 "
       >
-        <div className="fixed inset-0 bg-black/30" />
+        <div className="fixed inset-0 bg-black/50 dark:bg-black/70" />
 
         <div className="fixed inset-0 flex items-center justify-center ">
-          <DialogPanel className=" w-[600px] rounded-lg bg-white p-4 ">
+          <DialogPanel className=" w-[600px] rounded-lg bg-white p-4 dark:bg-neutral-800">
             <button
               onClick={() => setIsOpen(false)}
               className="mb-2 flex w-full items-end justify-end overflow-hidden transition duration-300 hover:text-red-500"
@@ -49,16 +49,29 @@ const HeroFigureDetail = ({
               <CloseIcon size={25} />
             </button>
             <div className="max-h-[32rem] space-y-4 overflow-y-auto">
-              <DialogTitle className="text-2xl font-semibold text-neutral-900">
+              <DialogTitle className="text-2xl font-semibold text-neutral-900 dark:text-neutral-50">
                 {name}
               </DialogTitle>
-              <Description className="text-neutral-700">
+              <Description className="text-neutral-700 dark:text-neutral-400">
                 {description}
               </Description>
-              <ul className="text-neutral-700 list-disc">
-                <li>Tempat, tanggal lahir : {place_of_birth}, {date_of_birth}</li>
-                <li>Tempat, tanggal wafat : {place_of_death}, {date_of_death}</li>
-              </ul>
+              <div>
+                <h3 className="text-lg font-medium">
+                  Tempat, tanggal lahir :{" "}
+                </h3>
+                <p className="text-neutral-700 dark:text-neutral-400">
+                  {place_of_birth}, {date_of_birth}
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-medium">
+                  Tempat, tanggal wafat :{" "}
+                </h3>
+                <p className="text-neutral-700 dark:text-neutral-400">
+                  {place_of_death}, {date_of_death}
+                </p>
+              </div>
+
               <Image src={image} alt={name} width={600} height={600} />
             </div>
           </DialogPanel>

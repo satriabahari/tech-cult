@@ -26,7 +26,7 @@ const HeroFigureCard = ({
   };
   return (
     <Card
-      className="cursor-pointer rounded-lg border-2 border-neutral-300 bg-neutral-100 text-center shadow-lg dark:border-neutral-600 dark:bg-neutral-800"
+      className="group cursor-pointer rounded-lg border-2 border-neutral-300 bg-neutral-100 text-center shadow-lg dark:border-neutral-600 dark:bg-neutral-800"
       onClick={() => handleClick(id)}
     >
       <div className="relative h-28 w-full rounded-t-lg bg-red-500">
@@ -35,10 +35,10 @@ const HeroFigureCard = ({
           alt={name}
           width={150}
           height={150}
-          className="absolute -bottom-1/2 right-1/2 h-36 w-36 translate-x-1/2 overflow-hidden rounded-full object-cover shadow-2xl transition duration-300"
+          className="absolute -bottom-1/2 right-1/2 h-36 w-36 translate-x-1/2 overflow-hidden rounded-full object-cover shadow-2xl transition duration-300 group-hover:scale-105"
         />
       </div>
-      <h2 className="mb-4 mt-20 text-xl font-medium transition duration-300">
+      <h2 className="mb-4 mt-20 text-xl font-medium transition duration-300 group-hover:text-red-500">
         {name}
       </h2>
 
